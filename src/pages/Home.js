@@ -1,11 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import styles from "./home.module.css";
 const Home = () => {
   return (
-    <div>
-      
+    <div className={styles.main}>
+      <section className={styles.hero_wrapper}></section>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
