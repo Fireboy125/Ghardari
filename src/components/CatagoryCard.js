@@ -9,6 +9,14 @@ const CatagoryCard = ({jeweleryData,electronics,manData,womenData}) => {
     console.log("WomenCollection",womenData);
     return (
         <div>
+        {
+            jeweleryData.map((value,index)=>{
+                return <div>
+
+                      </div>
+            })
+
+        }
                 
         </div>
     )
