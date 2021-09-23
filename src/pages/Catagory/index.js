@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "../Catagory/Category.module.css";
 // import { Link } from 'react-router-dom';
-import CatagoryCard from "../../components/Card";
+import CatagoryCard from "../../components/Card/index";
 
 const Category = () => {
   const [jeweleryData, setJewelaryData] = useState([]);
