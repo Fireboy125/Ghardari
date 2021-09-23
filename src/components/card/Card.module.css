@@ -1,24 +1,47 @@
-*{
-    margin: 0;
-    padding: 0;
+.card {
+  width: 300px;
+  height: 480px;
+  padding: 20px 0;
+  margin-left: 10px;
+  position: relative;
+  overflow: hidden;
 }
 
-.section{
-    max-width: 100%;
-    
+.card h4 {
+  margin-top: 7px;
+  font-family: Poppins, "sans-serif";
+  font-weight: light;
+  font-size: 16px;
 }
-.container{
-    max-width: 1440px;
-    margin: 20px auto;
-    display: flex;
-    justify-content: center;
+.card h3 {
+  font-family: Poppins, "sans-serif";
+  font-weight: regular;
+  font-size: 20px;
 }
-.cardWrapper{
-    margin: auto;
+.card:hover > h3 {
+  color: red;
 }
-.imgWrapper img{
-    height: 200px;
-    width: 250px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.card:hover > .roundPercentage {
+  display: block;
+  top: 30px;
+  left: 10px;
+  transition: all 1.3s;
+}
+.roundPercentage {
+  position: absolute;
+  top: -90px;
+  left: 10px;
+  background-color: red;
+  padding: 7px 14px 5px;
+  border-radius: 21px;
+  transition: all 1.3s;
+  text-align: center;
+  /* z-index: -10; */
+  /* width: 50px;
+  height: 50px; */
+}
+
+.roundPercentage h3 {
+  padding-top: 5px;
+  color: white;
 }
