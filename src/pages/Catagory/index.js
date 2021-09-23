@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "../Catagory/Category.module.css";
-// import { Link } from 'react-router-dom';
-import CatagoryCard from "../../components/Card/index";
-
+import Card from "../../components/Card";
 const Category = () => {
   const [jeweleryData, setJewelaryData] = useState([]);
   const [electronicsData, setElectronicData] = useState([]);
@@ -43,25 +41,12 @@ const Category = () => {
       <div className={style.section}>
         <div className={style.container}>
           <div className={style.wrapper}>
-            <CatagoryCard
+            <Card
               jeweleryData={jeweleryData}
               electronics={electronicsData}
               manData={menCollectionData}
               womenData={womenCollectionData}
             />
-            {/* <div className="row">
-
-                    {
-                        products && products.map((value,index)=>{
-                               return <div key={index} className="col-lg-3 wrap"> 
-                                            <img className="img-fluid" src={value.image} alt="card_bg" />  
-                                            <h5> {value.price} </h5>             
-
-                                       </div>
-                        })
-                    }
-                    
-                    </div> */}
           </div>
         </div>
       </div>
