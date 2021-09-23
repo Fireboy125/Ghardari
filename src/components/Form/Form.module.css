@@ -80,6 +80,10 @@ form .form_inner input[type="submit"] {
   color: #fff;
   font-weight: 700;
   cursor: pointer;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 form .form_inner input[type="submit"]:hover {
   background-position: 100% 0%;
