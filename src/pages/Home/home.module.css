@@ -1,0 +1,45 @@
+* {
+  margin: auto;
+}
+.main {
+  background-color: rgb(30, 30, 30);
+}
+.container {
+  max-width: 1440px;
+}
+.hero {
+  margin: 0 auto;
+}
+.hero_wrapper {
+  padding: 240px 0px;
+}
+
+.hero_wrapper h4 {
+  color: rgb(140, 140, 140);
+}
+
+.hero_wrapper h2 {
+  color: rgb(243, 243, 243);
+  font-size: 95px;
+  font-weight: 600;
+}
+form {
+  margin-top: 20px;
+  position: relative;
+}
+form input[type="text"] {
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  border: 1px solid rgb(243, 243, 243);
+  background-color: transparent;
+  padding: 20px;
+  width: 55%;
+}
+form input[type="submit"] {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  margin-left: -50px;
+}
