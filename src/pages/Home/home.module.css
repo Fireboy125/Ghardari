@@ -1,73 +1,60 @@
-.main {
-  background-color: rgb(30, 30, 30);
+.imgCarousal {
+  margin: 70px;
 }
-.container {
-  margin: 0 auto;
-  max-width: 1440px;
-}
-.hero {
-  margin: 0 auto;
-}
-.hero_wrapper {
-  padding: 240px 0px;
-}
-
-.hero_wrapper h4 {
-  color: rgb(140, 140, 140);
-}
-
-.hero_wrapper h2 {
-  color: rgb(243, 243, 243);
-  font-size: 95px;
-  font-weight: 600;
-}
-form {
-  margin-top: 20px;
+.imgListWrapper li {
+  display: inline-block;
+  font-family: Poppins, "sans-serif";
+  font-size: 18px;
+  margin-right: 70px;
+  cursor: pointer;
   position: relative;
 }
-form input[type="text"] {
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
+.imgListWrapper li:active,
+.imgListWrapper li:focus,
+.imgListWrapper li:checked,
+.imgListWrapper li:hover {
+  font-weight: 500;
+  color: #ca0fae;
+}
+.imgListWrapper li:hover::after {
+  content: "";
+  width: 54px;
+  height: 2px;
+  background-color: #ca0fae;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+.imgListWrapper a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: #ca0fae;
+  color: white;
   border-radius: 30px;
-  border: 1px solid rgb(243, 243, 243);
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: none;
+}
+.imgListWrapper a:hover {
+  color: #ca0fae;
+  border: 1px dashed #ca0fae;
   background-color: transparent;
-  padding: 20px;
-  width: 55%;
-  color: rgb(243, 243, 243);
 }
-form input[type="submit"] {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  border: none;
-  margin-left: -50px;
+.choose {
+  font-family: Poppins, "sans-serif";
 }
-.leftImage {
-  background-color: rgb(98, 98, 98);
+.chooseWrap {
+  margin: 50px;
+}
+.chooseWrap h2 {
   text-align: center;
-  padding: 30px;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  /* border-radius: 50%; */
-  /* border-top: 30px; */
 }
-.leftImage img {
-  width: 200px;
-  height: 300px;
-  object-fit: contain;
+.chooseWrapContent h4 {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 30px 0;
 }
-.rightImages img {
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
-}
-.LeftImagetext text {
-  font-size: 50px;
-}
-path {
-  fill: transparent;
-}
-
-text {
-  fill: #ff9800;
+.chooseWrapContent p {
+  color: #808080;
 }
