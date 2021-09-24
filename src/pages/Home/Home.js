@@ -73,6 +73,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section>
+        <div className="container"></div>
+      </section>
     </>
   );
 };
