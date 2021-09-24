@@ -64,20 +64,20 @@ const Navbar = () => {
                   </Link>
                 </li>
               </ul>
-              <div className="navbar_icons">
-                <span className="pe-4">
-                  <Link to="#" className={style.icons}>
-                    <SearchIcon />
+              <div className="navbar_icons_wrapper">
+                <span className={`${style.navbar_icons} pe-4`}>
+                  <Link to="#"  className={style.icon_link}>
+                    <SearchIcon color="action" className={style.icons} />
                   </Link>
                 </span>
-                <span className="pe-4">
-                  <Link to="#">
-                    <ShoppingCartIcon />
+                <span className={`${style.navbar_icons} pe-4`}>
+                  <Link to="#" className={style.icon_link}>
+                    <ShoppingCartIcon color="action" className={style.icons} />
                   </Link>
                 </span>
-                <span>
-                  <Link to="#">
-                    <PermIdentityIcon />
+                <span className={`${style.navbar_icons} pe-4`}>
+                  <Link to="#"  className={style.icon_link}>
+                    <PermIdentityIcon color="action" className={style.icons} />
                   </Link>
                 </span>
               </div>

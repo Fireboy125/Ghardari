@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import style from "./Login.module.css";
 import Form from "../../components/Form/Form";
+import Navbar from "../../components/Navbar/Navbar.js";
+import AddCart from "../../components/AddToCart/AddCart";
 
 const Login = () => {
   const adminUser = {
@@ -37,8 +39,9 @@ const Login = () => {
     <div className={style.login}>
       {user.email !== "" ? (
         <div class="welcome">
-          <h2>Welcome {user.name}</h2>
-          <button onClick={Logout}>Logout</button>
+          <Navbar />
+          <AddCart />
+          {/* <button onClick={Logout}>Logout</button> */}
         </div>
       ) : (
         <Form Login={Login} error={error} />

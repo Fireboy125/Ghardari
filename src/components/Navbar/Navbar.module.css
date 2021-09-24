@@ -14,3 +14,13 @@
   text-decoration: none;
   padding-bottom: 10px;
 }
+.icon_link {
+  padding: 5px;
+  border-radius: 20px;
+}
+.icon_link:hover {
+  background-color: purple;
+}
+.icons:hover {
+  color: white;
+}
