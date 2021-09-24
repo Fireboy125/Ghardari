@@ -3,7 +3,6 @@ import "./App.css";
 import Home from "./pages/Home/Home";
 import Category from "./pages/Category/index";
 import Login from "./pages/loginPage/Login";
-
 function App() {
   return (
     <div>
