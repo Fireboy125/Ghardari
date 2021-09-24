@@ -6,7 +6,7 @@ const Carousal = () => {
   return (
     <>
       <Carousel>
-        <Carousel.Item interval={5000} indicators={false}>
+        <Carousel.Item interval={5000}>
           <img className="d-block w-100" src={img1} alt="First slide" />
           <Carousel.Caption>
             <h3>First slide label</h3>
