@@ -3,6 +3,8 @@ import "./App.css";
 import Home from "./pages/Home/Home";
 import Category from "./pages/Category/index";
 import Login from "./pages/loginPage/Login";
+import ProductDetails from "./components/productDetail";
+
 function App() {
   return (
     <div>
@@ -10,7 +12,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/category" component={Category} />
-          {/* <Route exact path="/category:category" component={Category} /> */}
+          <Route exact path="/product" component={ProductDetails}/>
+          {/* <Route exact path="/category:category" component={ProductDetails} /> */}
           <Route exact path="/home" component={Home} />
           <Route>Error</Route>
         </Switch>
