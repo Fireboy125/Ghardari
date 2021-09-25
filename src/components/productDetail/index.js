@@ -1,4 +1,4 @@
-import React ,{useEffect,useState} from "react";
+import React ,{useEffect} from "react";
 import style from "./productDetail.module.css";
 import HomeIcon from "@mui/icons-material/Home";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
@@ -6,21 +6,19 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from '@mui/icons-material/Add';
 import { useParams } from "react-router";
 import {Link} from 'react-router-dom';
+import { fetchSpecificProduct } from "../../redux/action/action";
+import {useSelector,useDispatch} from 'react-redux';
+
+
 const ProductDetails = () => {
   const {id}= useParams();
-  console.log(id);
+  const {posts} = useSelector(state => state.data);
+  const dispatch =useDispatch();
 
-  const [productDetail,setProductDetails] =useState({});
+useEffect(() => {
+  dispatch(fetchSpecificProduct(id));
+}, [])
 
-
-
-  useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(res=>res.json())
-            .then(json=>setProductDetails(json))
-  }, [])
-
-  console.log(productDetail);
 
   return (
     <>
@@ -31,11 +29,11 @@ const ProductDetails = () => {
             <div className="col-lg-5">
               <div className={style.Wrapper}>
                 <div className={style.contentWrapper}>
-                <Link style={{color:"black"}} to='/'>  <HomeIcon className={style.iconHome} /> </Link>  /
-                  <h5> {productDetail.category} </h5>
+                <Link style={{color:"black"}} to='/home'>  <HomeIcon className={style.iconHome} /> </Link>  /
+                  <h5> {posts.category} </h5>
                 </div>
                 <div className={style.ImageWrapper}>
-                  <img src={productDetail.image} alt="Product" />
+                  <img src={posts.image} alt="Product" />
                 </div>
               </div>
             </div>
@@ -71,11 +69,11 @@ const ProductDetails = () => {
                     <h3>Sale</h3>
                   </div>
                   
-                  <h4> {productDetail.title} </h4>
-                  <h5>{ ` $ ${productDetail.price}`} </h5>
-                  <h5> {productDetail.category} </h5>
+                  <h4> {posts.title} </h4>
+                  <h5>{ ` $ ${posts.price}`} </h5>
+                  <h5> {posts.category} </h5>
                   <h5> </h5>
-                  <p>{productDetail.description} </p>
+                  <p>{posts.description} </p>
                   <div className={style.buttonWrap}>
                     <button className={style.actionBtn}>   
                       <AddIcon />

@@ -25,6 +25,44 @@ const postReducer = (state=initialState,action)=>{
                 loading:false,
                 error:action.payload
             }
+
+            case types.FETCH_CATEGORY_START:
+                return {
+                    ...state,
+                    loading:true
+                };
+            case types.FETCH_CATEGORY_SUCCESS:
+                return{
+                    ...state,
+                    loading:false,
+                    posts:action.payload
+                };
+            case types.FETCH_CATEGORY_FAIL:
+                return{
+                    ...state,
+                    loading:false,
+                    error:action.payload
+                }
+
+
+
+                case types.FETCH_PRODUCT_START:
+                    return {
+                        ...state,
+                        loading:true
+                    };
+                case types.FETCH_PRODUCT_SUCCESS:
+                    return{
+                        ...state,
+                        loading:false,
+                        posts:action.payload
+                    };
+                case types.FETCH_PRODUCT_FAIL:
+                    return{
+                        ...state,
+                        loading:false,
+                        error:action.payload
+                    }
         default:
             return state;
     }
