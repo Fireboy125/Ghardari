@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import style from "../Category/Category.module.css";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -6,30 +6,33 @@ import Checkbox from "@mui/material/Checkbox";
 import Card from "../../components/Card";
 import HomeIcon from "@mui/icons-material/Home";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchPosts } from "../../redux/action/action.js";
+import {fetchSpecificCategory } from "../../redux/action/action.js";
 import {Link, useParams} from 'react-router-dom';
 
 const Category = () => {
+  // const [category, setCategory] = useState([]);
+
+  const { posts} = useSelector((state) => ({ ...state.data }));
   const {id}=useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchPosts());
+    
+    dispatch(fetchSpecificCategory(id));
+    
   }, []);
 
-  const { posts, loading } = useSelector((state) => ({ ...state.data }));
-  console.log("posts", posts);
 
-  const [category, setCategory] = useState([]);
+  
 
 
   //Setting category type data
-  useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/category/${id}`)
-      .then((res) => res.json())
-      .then((result) => setCategory(result))
-      .catch((error) => console.log("Not Connected Succefully", error));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`https://fakestoreapi.com/products/category/${id}`)
+  //     .then((res) => res.json())
+  //     .then((result) => setCategory(result))
+  //     .catch((error) => console.log("Not Connected Succefully", error));
+  // }, []);
   return (
     <>
       <div className={style.section}>
@@ -125,7 +128,7 @@ const Category = () => {
                   <h1> {id} Collections</h1>
                 </div>
                 <Card
-                  category={category}
+                  category={posts}
                 />
               </div>
             </div>
