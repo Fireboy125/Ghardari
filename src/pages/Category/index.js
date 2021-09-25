@@ -5,9 +5,12 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Card from "../../components/Card";
 import HomeIcon from '@mui/icons-material/Home';
+<<<<<<< HEAD
+=======
 import {useSelector,useDispatch} from 'react-redux';
 import { fetchPosts } from "../../redux/action/action.js";
 
+>>>>>>> 6b5b2359f002264614074b5428d02c3085319d82
 const Category = () => {
   
   const dispatch =useDispatch();
@@ -64,7 +67,11 @@ useEffect(() => {
           <div className="row">
             <div className="col-lg-2">
            <div className={style.contentWrapper}>
+<<<<<<< HEAD
+               <HomeIcon className={style.iconHome}/> \ <h5> Categories </h5>
+=======
                <HomeIcon className={style.iconHome}/> / <h5> Categories </h5>
+>>>>>>> 6b5b2359f002264614074b5428d02c3085319d82
 
            </div>    
            <div className={style.listWapper}>
@@ -111,6 +118,12 @@ useEffect(() => {
                          <button className={style.actionBtn}> Submit </button>
                     </ul>
                </div>  
+<<<<<<< HEAD
+                       
+        
+
+        </div>
+=======
         </div>
 
         {/* Testing */}
@@ -132,6 +145,7 @@ useEffect(() => {
           </div>
 
         {/* testing end */}
+>>>>>>> 6b5b2359f002264614074b5428d02c3085319d82
         <div className="col-lg-9">
       
               <div className={style.wrapper}>
