@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "./ImagesCarousal.module.css";
 import img1 from "../../images/boy.png";
-import Card from "../../components/Card";
+// import Card from "../../components/Card";
+import { fetchPosts } from "../../redux/action/action";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+
 const ImagesCarousal = () => {
+  const { posts, loading } = useSelector((state) => ({ ...state.data }));
+  const dispatch = useDispatch();
+  const [user, setUser] = useState([]);
+  console.log("posts from home",posts);
+  // const [filter,setFilter] = useState()
+  // const history = useHistory();
+  // const getUser = () => {
+  //   setUser(() => dispatch(fetchPosts()));
+  //   console.log(user);
+  // };
+  useEffect(() => {
+    dispatch(fetchPosts());
+  }, []);
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -85,7 +102,7 @@ const ImagesCarousal = () => {
       <section>
         <div className="imgCarous">
           <Slider {...settings}>
-            <div>
+            {/* <div>
               <img src={img1} alt="" />
             </div>
             <div>
@@ -105,7 +122,24 @@ const ImagesCarousal = () => {
             </div>
             <div>
               <img src={img1} alt="" />
-            </div>
+            </div> */}
+            {/* {posts.map((value, index) => {
+              return (
+                <div>
+                  <img src={value} alt="" />
+                </div>
+              );
+            })} */}
+            {/* <button onClick={() => dispatch(fetchPosts())}></button> */}
+
+            {posts.map((post, curElem) => (
+              <div key={curElem}>
+                {/* <a href="">{post}</a> */}
+                <Link to={`/category/${post}`}>
+                  {post}
+                </Link>
+              </div>
+            ))}
           </Slider>
         </div>
       </section>
