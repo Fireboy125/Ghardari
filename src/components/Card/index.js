@@ -18,7 +18,7 @@ const Card = ({jeweleryData}) => {
                         <h3>30%</h3>
                       </div>
                       <div className={styles.contentWrap}>
-                      <h4>{value.category}</h4>
+                      <h4>{value.title.slice(0,15)}</h4>
                         <h3>{ `$ ${value.price}`}</h3>
                       </div>
                       <div className={styles.buttonWrap}>

@@ -51,7 +51,11 @@ const Home = () => {
               </div>
               <div className="col-3">
                 <div className={styles.chooseWrapContent}>
-                  <img src={img3} alt="" />
+                  <img
+                    style={{ margin: "auto", textAlign: "center" }}
+                    src={img3}
+                    alt=""
+                  />
                   <h4>Money-Back Guarantee</h4>
                   <p>
                     If an item arrived damaged or you've changed your mind, you

@@ -5,11 +5,28 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Card from "../../components/Card";
 import HomeIcon from '@mui/icons-material/Home';
+import {useSelector,useDispatch} from 'react-redux';
+import { fetchPosts } from "../../redux/action/action.js";
+
 const Category = () => {
+  
+  const dispatch =useDispatch();
+
+useEffect(() => {
+  dispatch(fetchPosts());
+}, [])
+  
+  
+
+  const {posts,loading} =useSelector((state)=> ({...state.data}));
+  console.log("posts",posts)
+
   const [jeweleryData, setJewelaryData] = useState([]);
   const [electronicsData, setElectronicData] = useState([]);
   const [menCollectionData, setMenCollection] = useState([]);
   const [womenCollectionData, setWomenCollection] = useState([]);
+
+
 
   //jwellery data
   useEffect(() => {
@@ -47,7 +64,7 @@ const Category = () => {
           <div className="row">
             <div className="col-lg-2">
            <div className={style.contentWrapper}>
-               <HomeIcon className={style.iconHome}/> \ <h5> Categories </h5>
+               <HomeIcon className={style.iconHome}/> / <h5> Categories </h5>
 
            </div>    
            <div className={style.listWapper}>
@@ -94,10 +111,27 @@ const Category = () => {
                          <button className={style.actionBtn}> Submit </button>
                     </ul>
                </div>  
-                       
-        
-
         </div>
+
+        {/* Testing */}
+
+          <div>
+          <h1>Testing Thunk </h1>       
+           { !loading ? (
+                posts.map((value,index)=>{
+                  return  <div key={index}>
+                                <h3> {value.title} </h3>
+                                <h3>{value.category} </h3>
+                          </div>
+
+                })  ): (
+                 <h3> Loading </h3>
+
+              )
+           }
+          </div>
+
+        {/* testing end */}
         <div className="col-lg-9">
       
               <div className={style.wrapper}>

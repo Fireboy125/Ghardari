@@ -58,3 +58,10 @@
 .chooseWrapContent p {
   color: #808080;
 }
+.chooseWrapContent img {
+  text-align: center;
+  margin: auto;
+}
+.slick-slide img {
+  margin: auto;
+}
