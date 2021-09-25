@@ -5,6 +5,7 @@ import img1 from "../../images/boy.png";
 // import Card from "../../components/Card";
 import { fetchPosts } from "../../redux/action/action";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ImagesCarousal = () => {
   const { posts, loading } = useSelector((state) => ({ ...state.data }));
@@ -130,9 +131,12 @@ const ImagesCarousal = () => {
             })} */}
             {/* <button onClick={() => dispatch(fetchPosts())}></button> */}
 
-            {posts.map((post) => (
+            {posts.map((post, curElem) => (
               <div>
-                <a href="">{post}</a>
+                {/* <a href="">{post}</a> */}
+                <Link to={`/about?id=${curElem.id}`}>
+                  <a href="">{post}</a>
+                </Link>
               </div>
             ))}
           </Slider>
