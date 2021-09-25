@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import style from "../Category/Category.module.css";
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 import Card from "../../components/Card";
+import HomeIcon from '@mui/icons-material/Home';
 const Category = () => {
   const [jeweleryData, setJewelaryData] = useState([]);
   const [electronicsData, setElectronicData] = useState([]);
@@ -38,17 +42,79 @@ const Category = () => {
   }, []);
   return (
     <>
-      <div className={style.section}>
-        <div className={style.container}>
-          <div className={style.wrapper}>
-            <Card
-              jeweleryData={jeweleryData}
-              electronics={electronicsData}
-              manData={menCollectionData}
-              womenData={womenCollectionData}
-            />
-          </div>
+          <div className={style.section}>
+            <div className={style.container}>
+          <div className="row">
+            <div className="col-lg-2">
+           <div className={style.contentWrapper}>
+               <HomeIcon className={style.iconHome}/> \ <h5> Categories </h5>
+
+           </div>    
+           <div className={style.listWapper}>
+                    <ul>
+                        <li> 
+                        <FormGroup className={style.formGroup}>
+                              <h6> Stones Types </h6> 
+                              <FormControlLabel control={<Checkbox defaultChecked />} label="ALEXANDRITE" />
+                              <FormControlLabel control={<Checkbox />} label="AMETHYST" />
+                              <FormControlLabel control={<Checkbox />} label="AQUAMARINE" />
+                              <FormControlLabel control={<Checkbox />} label="EMERALD" />
+                        </FormGroup>
+                         </li> 
+                   
+                    </ul>
+               </div>   
+               <div className={style.listWapper}>
+                    <ul>
+                        <li> 
+                        <FormGroup className={style.formGroup}>
+                              <h6> Jwellery Types </h6> 
+                              <FormControlLabel control={<Checkbox defaultChecked />} label="Temple Jewellery" />
+                              <FormControlLabel control={<Checkbox />} label="Bead Jewellery" />
+                              <FormControlLabel control={<Checkbox />} label="Bridal Jewellery" />
+                              <FormControlLabel control={<Checkbox />} label="Filigree Jewellery" />
+                        </FormGroup>
+                         </li> 
+                   
+                    </ul>
+               </div> 
+               <div className={style.listWapper}>
+                    <ul>
+                        <li> 
+                        <FormGroup className={style.formGroup}>
+                              <h6> Shirt Types </h6> 
+                              <FormControlLabel control={<Checkbox defaultChecked />} label="camp Collar shirt" />
+                              <FormControlLabel control={<Checkbox />} label="Cotton Twill Shirt" />
+                              <FormControlLabel control={<Checkbox />} label="Flannel Shirt" />
+                              <FormControlLabel control={<Checkbox />} label="Denim Shirt" />
+                              {/* <button className={style.actionBtn}> Submit </button> */}
+                        </FormGroup>
+                
+                         </li> 
+                         <button className={style.actionBtn}> Submit </button>
+                    </ul>
+               </div>  
+                       
+        
+
         </div>
+        <div className="col-lg-9">
+      
+              <div className={style.wrapper}>
+                  <div className={style.titleWrap}>
+                      <h1> Jwellery  Collections</h1>
+                  </div>
+                <Card
+                  jeweleryData={jeweleryData}
+                  electronics={electronicsData}
+                  manData={menCollectionData}
+                  womenData={womenCollectionData}
+                />
+              </div>
+        </div>
+      </div>
+        </div>
+      
       </div>
     </>
   );
