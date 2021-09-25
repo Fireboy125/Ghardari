@@ -24,6 +24,7 @@ export function fetchPosts(){
             .then((response)=>{
                 const posts=response.data;
                 dispatch(fetchPostSuccess(posts));
+                console.log("post Categories",posts);
 
             })
             .catch((error)=>{

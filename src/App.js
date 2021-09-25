@@ -12,8 +12,8 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route exact path="/category" component={Category} />
-          <Route exact path="/product" component={ProductDetails} />
+          <Route exact path="/category/:id" component={Category} />
+          <Route exact path="/products/:id" component={ProductDetails} />
           {/* <Route exact path="/category:category" component={ProductDetails} /> */}
           <Route exact path="/home" component={Home} />
           <Route>Error</Route>

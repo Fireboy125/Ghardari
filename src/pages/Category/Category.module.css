@@ -11,7 +11,9 @@
 }
 .titleWrap h1{
   margin: 50px auto;
-  max-width: 40%;
+  max-width: 55%;
+  text-transform: uppercase;
+  text-align: center;
   padding: 20px;
   border-top: 1px solid #CA0FAE;
   border-bottom: 1px solid #CA0FAE;

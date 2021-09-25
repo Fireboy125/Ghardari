@@ -1,25 +1,41 @@
-import React from "react";
+import React ,{useEffect,useState} from "react";
 import style from "./productDetail.module.css";
 import HomeIcon from "@mui/icons-material/Home";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from '@mui/icons-material/Add';
-import boy from "../../images/boy.png";
+import { useParams } from "react-router";
+import {Link} from 'react-router-dom';
 const ProductDetails = () => {
+  const {id}= useParams();
+  console.log(id);
+
+  const [productDetail,setProductDetails] =useState({});
+
+
+
+  useEffect(() => {
+    fetch(`https://fakestoreapi.com/products/${id}`)
+            .then(res=>res.json())
+            .then(json=>setProductDetails(json))
+  }, [])
+
+  console.log(productDetail);
+
   return (
     <>
-      {" "}
+      
       <div className={style.section}>
         <div className={style.container}>
           <div className="row">
             <div className="col-lg-5">
               <div className={style.Wrapper}>
                 <div className={style.contentWrapper}>
-                  <HomeIcon className={style.iconHome} /> /{" "}
-                  <h5> Categories </h5>
+                <Link style={{color:"black"}} to='/'>  <HomeIcon className={style.iconHome} /> </Link>  /
+                  <h5> {productDetail.category} </h5>
                 </div>
                 <div className={style.ImageWrapper}>
-                  <img src={boy} alt="Product" />
+                  <img src={productDetail.image} alt="Product" />
                 </div>
               </div>
             </div>
@@ -54,20 +70,19 @@ const ProductDetails = () => {
                   <div className={style.roundPercentage}>
                     <h3>Sale</h3>
                   </div>
-                  <h4> Title </h4>
-                  <h5>Price </h5>
-                  <h5> Title </h5>
+                  
+                  <h4> {productDetail.title} </h4>
+                  <h5>{ ` $ ${productDetail.price}`} </h5>
+                  <h5> {productDetail.category} </h5>
                   <h5> </h5>
-                  <p>Discription </p>
+                  <p>{productDetail.description} </p>
                   <div className={style.buttonWrap}>
-                    <button className={style.actionBtn}>
-                      {" "}
-                      <AddIcon />{" "}
+                    <button className={style.actionBtn}>   
+                      <AddIcon />
                     </button>
                     <button className={style.actionBtn}> Add to Cart </button>
                     <button className={style.actionBtn}>
-                      {" "}
-                      <RemoveIcon />{" "}
+                      <RemoveIcon />
                     </button>
                   </div>
                 </div>

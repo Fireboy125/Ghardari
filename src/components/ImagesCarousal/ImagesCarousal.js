@@ -11,6 +11,7 @@ const ImagesCarousal = () => {
   const { posts, loading } = useSelector((state) => ({ ...state.data }));
   const dispatch = useDispatch();
   const [user, setUser] = useState([]);
+  console.log("posts from home",posts);
   // const [filter,setFilter] = useState()
   // const history = useHistory();
   // const getUser = () => {
@@ -132,10 +133,10 @@ const ImagesCarousal = () => {
             {/* <button onClick={() => dispatch(fetchPosts())}></button> */}
 
             {posts.map((post, curElem) => (
-              <div>
+              <div key={curElem}>
                 {/* <a href="">{post}</a> */}
-                <Link to={`/about?id=${curElem.id}`}>
-                  <a href="">{post}</a>
+                <Link to={`/category/${post}`}>
+                  {post}
                 </Link>
               </div>
             ))}
