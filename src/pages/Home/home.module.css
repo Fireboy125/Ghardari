@@ -65,3 +65,10 @@
 .slick-slide img {
   margin: auto;
 }
+.ImagesCarousal {
+  background-color: rgb(246, 246, 246);
+  padding: 150px 0;
+}
+.ImagesCarousalContentHeading {
+  margin-bottom: 30px !important;
+}

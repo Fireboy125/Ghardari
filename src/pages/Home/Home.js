@@ -23,7 +23,28 @@ const Home = () => {
           <a href="#">Show More</a>
         </ul>
       </section>
-      <ImagesCarousal />
+      <section className={styles.ImagesCarousal}>
+        <div className="container">
+          <div className="d-flex ImagesCarousalContent mb-5">
+            <h2>
+              Our ━━━━━━━━━ <br /> Categories
+            </h2>
+            <p
+              style={{
+                width: "550px",
+                marginLeft: "32%",
+                fontSize: "20px",
+                color: "rgba(137, 137, 137)",
+                fontWeight: "500",
+              }}
+            >
+              Various types of clothes categories for you. You can easily search
+              for what category of clothes you want.
+            </p>
+          </div>
+        </div>
+        <ImagesCarousal />
+      </section>
       <section className={styles.choose}>
         <div className="container">
           <div className={styles.chooseWrap}>
