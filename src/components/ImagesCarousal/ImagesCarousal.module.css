@@ -18,6 +18,8 @@
   /* background: linear-gradient(to right, #fffbd5, #b20a2c); */
   border-radius: 200px;
   margin-left: 60px;
+  /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2) */
+  box-shadow: 0 0 50px 1px rgb(230, 229, 229);
 }
 .imgCarousCard a {
   /* border-radius: 50%; */
