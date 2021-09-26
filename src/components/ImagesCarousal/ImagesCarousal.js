@@ -6,12 +6,12 @@ import img1 from "../../images/boy.png";
 import { fetchPosts } from "../../redux/action/action";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-
+import style from "./ImagesCarousal.module.css";
 const ImagesCarousal = () => {
   const { posts, loading } = useSelector((state) => ({ ...state.data }));
   const dispatch = useDispatch();
   const [user, setUser] = useState([]);
-  console.log("posts from home",posts);
+  console.log("posts from home", posts);
   // const [filter,setFilter] = useState()
   // const history = useHistory();
   // const getUser = () => {
@@ -30,6 +30,11 @@ const ImagesCarousal = () => {
           ...style,
           display: "block",
           filter: "invert(100%)",
+          // padding: "100px",
+          width: "30px",
+          height: "50px",
+          content: "━>",
+          // backgroundColor: "white",
         }}
         onClick={onClick}
       />
@@ -56,7 +61,7 @@ const ImagesCarousal = () => {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 2000,
     autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
@@ -100,7 +105,9 @@ const ImagesCarousal = () => {
   return (
     <div className="container">
       <section>
-        <div className="imgCarous">
+        <div
+        // className={style.imgCarous}
+        >
           <Slider {...settings}>
             {/* <div>
               <img src={img1} alt="" />
@@ -133,10 +140,10 @@ const ImagesCarousal = () => {
             {/* <button onClick={() => dispatch(fetchPosts())}></button> */}
 
             {posts.map((post, curElem) => (
-              <div key={curElem}>
+              <div className={style.imgCarousCard} key={curElem}>
                 {/* <a href="">{post}</a> */}
                 <Link to={`/category/${post}`}>
-                  {post}
+                  <a href="">{post}</a>
                 </Link>
               </div>
             ))}

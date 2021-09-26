@@ -7,3 +7,26 @@
 .Slider div {
   margin-left: 100px;
 }
+
+.imgCarousCard {
+  /* border: 1px solid black; */
+  padding: 140px 90px 40px 75px;
+  width: 240px !important;
+  height: 320px;
+  text-align: left;
+  background-color: white;
+  /* background: linear-gradient(to right, #fffbd5, #b20a2c); */
+  border-radius: 200px;
+  margin-left: 60px;
+}
+.imgCarousCard a {
+  /* border-radius: 50%; */
+  text-decoration: none;
+  color: rgb(140, 140, 140);
+  /* color: white; */
+  font-size: 20px;
+}
+.imgCarousCard a:hover {
+  font-weight: bold;
+  color: black;
+}
