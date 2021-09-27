@@ -6,7 +6,13 @@ import Login from "./pages/loginPage/Login";
 import ProductDetails from "./components/productDetail";
 import Navbar from "./components/Navbar/Navbar";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+<<<<<<< HEAD
 import AddToCart from "./components/AddToCart/AddToCart";
+=======
+
+import AddToCart from "./components/AddToCart/AddToCart";
+
+>>>>>>> d4c05ddef73828da4b611116cdb3480d43edee14
 import AddCart from "./pages/AddCart";
 import { createBrowserHistory } from "history";
 
