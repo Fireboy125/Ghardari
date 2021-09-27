@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import style from "./ImagesCarousal.module.css";
 const ImagesCarousal = () => {
-  const { posts, loading } = useSelector((state) => ({ ...state.data }));
+  const {posts} =useSelector(state => state.data);
   const dispatch = useDispatch();
   const [user, setUser] = useState([]);
   console.log("posts from home", posts);

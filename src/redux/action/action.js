@@ -45,6 +45,10 @@ const fetchSpecificProductFail =(error)=>({
     type:types.FETCH_PRODUCT_FAIL,
     payload: error,
 });
+export const fetchCartProducts =(product)=>({
+    type:types.ADD_TO_CART,
+    payload: product,
+});
 
 export function fetchPosts(){
     return function(dispatch){
