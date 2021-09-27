@@ -34,7 +34,7 @@ const Navbar = () => {
               </div>
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active pe-3">
-                  <Link className={style.nav_link} to="#">
+                  <Link className={style.nav_link} to="/home">
                     <strong> Home </strong>
                   </Link>
                 </li>
@@ -66,17 +66,17 @@ const Navbar = () => {
               </ul>
               <div className="navbar_icons">
                 <span className="pe-4">
-                  <Link to="#" className={style.icons}>
+                  <Link to="/products/6" className={style.icons}>
                     <SearchIcon />
                   </Link>
                 </span>
                 <span className="pe-4">
-                  <Link to="#">
+                  <Link to="/addcart">
                     <ShoppingCartIcon />
                   </Link>
                 </span>
                 <span>
-                  <Link to="#">
+                  <Link to="/products/12">
                     <PermIdentityIcon />
                   </Link>
                 </span>
