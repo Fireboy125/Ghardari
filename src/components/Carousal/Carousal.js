@@ -1,6 +1,8 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import img1 from "../../images/pexels-jaysen-scott-1858488.png";
+import img2 from "../../images/clothes.jpg";
+import img3 from "../../images/clothes2.jpg";
 import "./Carousal.module.css";
 const Carousal = () => {
   return (
@@ -16,7 +18,7 @@ const Carousal = () => {
         <Carousel.Item interval={5000}>
           <img
             className="d-block w-100 carousel"
-            src={img1}
+            src={img2}
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -25,7 +27,7 @@ const Carousal = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-100 h-50" src={img1} alt="Third slide" />
+          <img className="d-block w-100 h-50" src={img3} alt="Third slide" />
           <Carousel.Caption>
             <h3>Third slide label</h3>
             <p>

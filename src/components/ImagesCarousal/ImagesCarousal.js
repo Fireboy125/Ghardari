@@ -9,18 +9,24 @@ import { Link } from "react-router-dom";
 import style from "./ImagesCarousal.module.css";
 const ImagesCarousal = () => {
   const { posts, loading } = useSelector((state) => ({ ...state.data }));
+  // const found = posts.filter((element) => element == "jewelery");
+  // console.log(found);
   const dispatch = useDispatch();
-  const [user, setUser] = useState([]);
+  // const [user, setUser] = useState([]);
   console.log("posts from home", posts);
-  // const [filter,setFilter] = useState()
-  // const history = useHistory();
-  // const getUser = () => {
-  //   setUser(() => dispatch(fetchPosts()));
-  //   console.log(user);
-  // };
   useEffect(() => {
     dispatch(fetchPosts());
   }, []);
+  // const [jewelery, setJewelery] = useState([]);
+  // const getUser = async () => {
+  //   const ab = await fetch(
+  //     "https://fakestoreapi.com/products/category/jewelery"
+  //   );
+  //   setJewelery(await ab.json());
+  // };
+  // useEffect(() => {
+  //   getUser();
+  // }, [jewelery]);
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -137,11 +143,8 @@ const ImagesCarousal = () => {
                 </div>
               );
             })} */}
-            {/* <button onClick={() => dispatch(fetchPosts())}></button> */}
-
             {posts.map((post, curElem) => (
               <div className={style.imgCarousCard} key={curElem}>
-                {/* <a href="">{post}</a> */}
                 <Link to={`/category/${post}`}>
                   <a href="">{post}</a>
                 </Link>
@@ -150,6 +153,15 @@ const ImagesCarousal = () => {
           </Slider>
         </div>
       </section>
+      {/* <section>
+        <div>
+          <Slider {...settings}>
+            {jewelery.map((value, index) => {
+              return <div>{value.title}</div>;
+            })}
+          </Slider>
+        </div>
+      </section> */}
     </div>
   );
 };

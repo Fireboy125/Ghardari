@@ -18,3 +18,30 @@
   background-size: cover;
   height: 90vh;
 }
+
+.carousel-control-next {
+  left: 200px;
+}
+.carousel-control-prev {
+  left: 100px !important;
+}
+.carousel-control-next-icon {
+  filter: invert(100%);
+  position: absolute;
+  top: 549px;
+  background: rgba(0, 0, 0, 1);
+  height: 70px !important;
+  width: 70px !important;
+  border-radius: 12px;
+}
+.carousel-control-prev-icon {
+  position: absolute;
+  top: 549px;
+  background: rgba(0, 0, 0, 1);
+  height: 70px !important;
+  width: 70px !important;
+  border-radius: 12px;
+}
+.carousel-inner {
+  height: 700px;
+}

@@ -6,6 +6,7 @@ import Login from "./pages/loginPage/Login";
 import ProductDetails from "./components/productDetail";
 import Navbar from "./components/Navbar/Navbar";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import AddToCart from "./components/AddToCart/AddToCart";
 function App() {
   return (
     <div>
@@ -15,10 +16,11 @@ function App() {
           <Route exact path="/" component={Login} />
           <Route exact path="/category/:id" component={Category} />
           <Route exact path="/products/:id" component={ProductDetails} />
+          <Route exact path="/cart" component={AddToCart} />
           {/* <Route exact path="/category:category" component={ProductDetails} /> */}
           <Route exact path="/home" component={Home} />
           {/* <Route>Error</Route> */}
-          <Route path="*" component={ErrorPage}/>
+          <Route path="*" component={ErrorPage} />
         </Switch>
       </Router>
     </div>

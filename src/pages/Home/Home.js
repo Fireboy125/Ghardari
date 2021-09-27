@@ -7,7 +7,11 @@ import img1 from "../../images/Free Shipping.png";
 import img2 from "../../images/Payments.png";
 import img3 from "../../images/Money.png";
 import img4 from "../../images/Finest Quality.png";
-const Home = () => {
+import Category from "./../Category/index";
+import { useSelector } from "react-redux";
+const Home = ({ category }) => {
+  const { post, loading } = useSelector((state) => ({ ...state.data }));
+
   return (
     <>
       <Carousal />
@@ -43,7 +47,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <ImagesCarousal />
+        <ImagesCarousal category={post} />
       </section>
       <section className={styles.choose}>
         <div className="container">
@@ -101,6 +105,14 @@ const Home = () => {
       <section>
         <div className="container"></div>
       </section>
+      {/* <section>
+        <div>
+
+          {category.map((value, index) => {
+            return <div>{value.title}</div>;
+          })}
+        </div>
+      </section> */}
     </>
   );
 };
