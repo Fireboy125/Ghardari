@@ -11,6 +11,7 @@ const ImagesCarousal = () => {
   const { posts, loading } = useSelector((state) => ({ ...state.data }));
   // const found = posts.filter((element) => element == "jewelery");
   // console.log(found);
+  const {posts} =useSelector(state => state.data);
   const dispatch = useDispatch();
   // const [user, setUser] = useState([]);
   console.log("posts from home", posts);

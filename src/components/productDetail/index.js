@@ -6,18 +6,22 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from '@mui/icons-material/Add';
 import { useParams } from "react-router";
 import {Link} from 'react-router-dom';
-import { fetchSpecificProduct } from "../../redux/action/action";
+import { fetchSpecificProduct, fetchCartProducts } from "../../redux/action/action";
+
 import {useSelector,useDispatch} from 'react-redux';
 
 
 const ProductDetails = () => {
   const {id}= useParams();
   const {posts} = useSelector(state => state.data);
+  const {products} = useSelector (state=>state.cart)
   const dispatch =useDispatch();
 
 useEffect(() => {
   dispatch(fetchSpecificProduct(id));
 }, [])
+
+console.log(products)
 
 
   return (
@@ -78,7 +82,7 @@ useEffect(() => {
                     <button className={style.actionBtn}>   
                       <AddIcon />
                     </button>
-                    <button className={style.actionBtn}> Add to Cart </button>
+                     <button onClick={()=>{ dispatch(fetchCartProducts(posts))}} className={style.actionBtn}> Add to Cart </button>
                     <button className={style.actionBtn}>
                       <RemoveIcon />
                     </button>
