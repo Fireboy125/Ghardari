@@ -8,14 +8,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import style from "./ImagesCarousal.module.css";
 const ImagesCarousal = () => {
-<<<<<<< HEAD
   const { posts } = useSelector((state) => state.data);
-=======
-  const { posts, loading } = useSelector((state) => ({ ...state.data }));
   // const found = posts.filter((element) => element == "jewelery");
   // console.log(found);
-  const {posts} =useSelector(state => state.data);
->>>>>>> d4c05ddef73828da4b611116cdb3480d43edee14
   const dispatch = useDispatch();
   // const [user, setUser] = useState([]);
   console.log("posts from home", posts);
